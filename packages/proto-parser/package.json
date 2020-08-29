@@ -1,0 +1,29 @@
+{
+  "name": "proto-parser",
+  "version": "0.1.0",
+  "description": "Parse Protobuf files into an abstract syntax tree",
+  "repository": "https://wip.com",
+  "author": "Gabriel Cangussu <gabrielcangussu@gmail.com> (https://github.com/gcangussu)",
+  "license": "MIT",
+  "main": "./dist-cjs/proto-parser.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist-cjs/proto-parser.js",
+      "default": "./dist/proto-parser.js"
+    },
+    "./ast-types": {
+      "require": "./dist-cjs/ast-types.js",
+      "default": "./dist/ast-types.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc --build && tsc --build tsconfig-cjs.json"
+  },
+  "dependencies": {
+    "protobufjs": "~6.10.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}

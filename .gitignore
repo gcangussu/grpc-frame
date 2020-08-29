@@ -1,0 +1,8 @@
+# Node.js et al.
+node_modules/
+dist/
+dist-cjs/
+*.tsbuildinfo
+
+# Visual Studio Code
+.vscode/

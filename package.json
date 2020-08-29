@@ -1,0 +1,21 @@
+{
+  "name": "grpc-frame",
+  "version": "0.1.0",
+  "description": "gRPC framework with type safe implementations",
+  "repository": "https://wip.com",
+  "author": "Gabriel Cangussu <gabrielcangussu@gmail.com> (https://github.com/gcangussu)",
+  "license": "MIT",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}

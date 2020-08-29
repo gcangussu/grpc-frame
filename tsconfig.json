@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "packages/proto-parser/tsconfig.json" },
+    { "path": "packages/proto-parser/tsconfig-cjs.json" }
+  ]
+}
