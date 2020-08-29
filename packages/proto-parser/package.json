@@ -1,8 +1,12 @@
 {
-  "name": "proto-parser",
+  "name": "@gcangussu/proto-parser",
   "version": "0.1.0",
   "description": "Parse Protobuf files into an abstract syntax tree",
-  "repository": "https://wip.com",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/gcangussu/grpc-frame.git",
+    "directory": "packages/proto-parser"
+  },
   "author": "Gabriel Cangussu <gabrielcangussu@gmail.com> (https://github.com/gcangussu)",
   "license": "MIT",
   "main": "./dist-cjs/proto-parser.js",

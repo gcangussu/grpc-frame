@@ -3,6 +3,8 @@
   "include": [],
   "references": [
     { "path": "packages/proto-parser/tsconfig.json" },
-    { "path": "packages/proto-parser/tsconfig-cjs.json" }
+    { "path": "packages/proto-parser/tsconfig-cjs.json" },
+    { "path": "packages/grpc-frame/tsconfig.json" },
+    { "path": "packages/grpc-frame/tsconfig-cjs.json" }
   ]
 }

@@ -1,26 +1,24 @@
 {
-  "name": "grpc-frame-monorepo",
+  "name": "grpc-frame",
   "version": "0.0.0",
   "description": "gRPC framework with type safe implementations",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gcangussu/grpc-frame.git"
+    "url": "https://github.com/gcangussu/grpc-frame.git",
+    "directory": "packages/grpc-frame"
   },
   "author": "Gabriel Cangussu <gabrielcangussu@gmail.com> (https://github.com/gcangussu)",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./dist-cjs/main.js",
   "type": "module",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "tsc --build"
-  },
-  "dependencies": {
-    "@gcangussu/proto-parser": "0.1.0"
+  "exports": {
+    ".": {
+      "require": "./dist-cjs/main.js",
+      "default": "./dist/main.js"
+    }
   },
   "devDependencies": {
+    "@types/node": "^14.6.2",
     "typescript": "^4.0.2"
   }
 }
