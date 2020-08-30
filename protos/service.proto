@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service Svc {
+  rpc RequestReply(Req) returns (Res);
+  rpc ClientStream(stream ReqC) returns (ResC);
+  rpc ServerStream(ReqS) returns (stream ResS);
+  rpc BidirectionalStream(stream ReqB) returns (stream ResB);
+}
+
+message Req {};
+message ReqC {};
+message ReqS {};
+message ReqB {};
+
+message Res {};
+message ResC {};
+message ResS {};
+message ResB {};

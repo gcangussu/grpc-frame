@@ -169,9 +169,8 @@ function processField(field: ProtobufField) {
     ? "optional"
     : "required";
 
-  const type = field.map ? "map" : fieldTypesMap[field.type] ?? "message";
-
-  const typeName = type === "message" ? field.type : "";
+  const type = getType(field);
+  const typeName = type === "message" || type === "enum" ? field.type : "";
 
   return {
     name,
@@ -182,6 +181,17 @@ function processField(field: ProtobufField) {
     mapType: getMapType(type, field),
     parentOneof: partOf != null ? partOf.name : "",
   };
+}
+
+function getType(field: ProtobufField): FieldType {
+  if (field.resolvedType instanceof protobuf.Enum) return "enum";
+  if (field.resolvedType instanceof protobuf.Type) return "message";
+  if (field.map) return "map";
+
+  const type = fieldTypesMap[field.type];
+  if (type == null) throw new Error(`Unknown type '${field.type}'`);
+
+  return type;
 }
 
 function getMapType(

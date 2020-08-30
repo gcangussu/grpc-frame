@@ -1,8 +1,15 @@
 # Node.js et al.
 node_modules/
+yarn-error.log
+*.tsbuildinfo
+
+# Generated code
 dist/
 dist-cjs/
-*.tsbuildinfo
+/test-build/
 
 # Visual Studio Code
 .vscode/
+
+# Jest
+/coverage/

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package foo.bar;
+
+service Bar {
+  rpc Baz(Req) returns (Res);
+}
+
+message Req {
+  Res yo = 1;
+  map<int32, string> yei = 2;
+
+  enum Opt {
+    NO = 0;
+    UNO = 1;
+  }
+  Opt opt = 3;
+}
+
+message Res {
+  oneof test_oneof {
+    string message = 1;
+    Code code = 2;
+  }
+}
+
+enum Code {
+  SUCCESS = 0;
+  ERROR = 1;
+}

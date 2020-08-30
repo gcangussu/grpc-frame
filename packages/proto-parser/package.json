@@ -1,10 +1,10 @@
 {
   "name": "@gcangussu/proto-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse Protobuf files into an abstract syntax tree",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/gcangussu/grpc-frame.git",
+    "type": "git",
+    "url": "https://github.com/gcangussu/grpc-frame.git",
     "directory": "packages/proto-parser"
   },
   "author": "Gabriel Cangussu <gabrielcangussu@gmail.com> (https://github.com/gcangussu)",
@@ -27,7 +27,16 @@
   "dependencies": {
     "protobufjs": "~6.10.1"
   },
+  "peerDependencies": {
+    "@types/node": "*"
+  },
+  "peerDependenciesMeta": {
+    "@types/node": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@types/node": "^14.6.2",
     "typescript": "^4.0.2"
   }
 }

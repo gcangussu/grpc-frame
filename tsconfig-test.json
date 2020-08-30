@@ -1,0 +1,17 @@
+{
+  "extends": "./packages/tsconfig-base.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./test-build",
+    "types": ["node", "jest"],
+    "declarationMap": false,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+  },
+  "include": ["**/*.test.ts"],
+  "exclude": ["**/node_modules/**"],
+  "references": [
+    { "path": "packages/proto-parser/tsconfig-cjs.json" },
+    { "path": "packages/grpc-frame/tsconfig-cjs.json" }
+  ]
+}

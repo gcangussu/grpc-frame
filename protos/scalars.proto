@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message Scalars {
+  double val_double = 1;
+  float val_float = 2;
+  int32 val_int32 = 3;
+  int64 val_int64 = 4;
+  uint32 val_uint32 = 5;
+  uint64 val_uint64 = 6;
+  sint32 val_sint32 = 7;
+  sint64 val_sint64 = 8;
+  fixed32 val_fixed32 = 9;
+  fixed64 val_fixed64 = 10;
+  sfixed32 val_sfixed32 = 11;
+  sfixed64 val_sfixed64 = 12;
+  bool val_bool = 13;
+  string val_string = 14;
+  bytes val_bytes = 15;
+}
