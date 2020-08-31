@@ -1,0 +1,6 @@
+/coverage/
+/test-build/
+
+node_modules/
+dist/
+dist-cjs/

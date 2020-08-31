@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "build": "tsc --build",
+    "build-pkgs": "tsc --build tsconfig-pkgs.json",
     "build-tests": "tsc --build tsconfig-test.json",
+    "lint": "LINT_QUICK=false eslint --max-warnings 0 --report-unused-disable-directives --format codeframe .",
     "test": "jest"
   },
   "husky": {
@@ -31,9 +33,12 @@
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@gcangussu/eslint-config": "^6.1.4",
     "@gcangussu/proto-parser": "0.1.1",
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.2",
+    "eslint": "^7.7.0",
+    "eslint-import-resolver-typescript": "^2.2.1",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "prettier": "^2.1.1",

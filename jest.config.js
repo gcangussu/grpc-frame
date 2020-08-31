@@ -1,6 +1,7 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
