@@ -49,7 +49,7 @@ function processRoot(pbRoot: protobuf.Root): Root {
 
 function processNamespaceChild(
   parent: Root | Namespace,
-  obj: protobuf.ReflectionObject
+  obj: protobuf.ReflectionObject,
 ): Namespace | Service | Message | Enum {
   if (obj instanceof protobuf.Enum) {
     return processEnum(parent, obj);
@@ -66,7 +66,7 @@ function processNamespaceChild(
 
 function processNamespace(
   parent: Root | Namespace,
-  obj: protobuf.Namespace
+  obj: protobuf.Namespace,
 ): Namespace {
   const namespace: WritableNamespace = {
     kind: "namespace",
@@ -84,7 +84,7 @@ function processNamespace(
 
 function processService(
   parent: Root | Namespace,
-  obj: protobuf.Service
+  obj: protobuf.Service,
 ): Service {
   const methodsObj: { [k: string]: Method } = {};
 
@@ -119,7 +119,7 @@ type ProtobufFieldsArray = readonly ProtobufField[];
 
 function processMessage(
   parent: Root | Namespace | Message,
-  obj: protobuf.Type
+  obj: protobuf.Type,
 ): Message {
   const fieldsObj: { [k: string]: MessageField } = {};
   const oneofsObj: { [k: string]: WritableMessageOneof | undefined } = {};
@@ -136,7 +136,7 @@ function processMessage(
     if (parentOneof != null) {
       if (parentOneof.fields[finalField.name] != null)
         throw new Error(
-          `Field '${finalField.name}' was already in oneof '${parentOneof.name}'`
+          `Field '${finalField.name}' was already in oneof '${parentOneof.name}'`,
         );
       parentOneof.fields[finalField.name] = finalField;
     }
@@ -196,7 +196,7 @@ function getType(field: ProtobufField): FieldType {
 
 function getMapType(
   type: FieldType,
-  field: ProtobufField
+  field: ProtobufField,
 ): readonly [MapKeyType, string] | null {
   if (type !== "map") return null;
 
@@ -208,7 +208,7 @@ function getMapType(
 
 function getOneof<T extends MessageOneof>(
   oneofsObj: { [k: string]: T | undefined },
-  name: string
+  name: string,
 ): T | null {
   if (name.length === 0) return null;
 
@@ -220,7 +220,7 @@ function getOneof<T extends MessageOneof>(
 
 function processMessageChild(
   parent: Message,
-  obj: protobuf.ReflectionObject
+  obj: protobuf.ReflectionObject,
 ): Message | Enum {
   if (obj instanceof protobuf.Enum) {
     return processEnum(parent, obj);
@@ -233,7 +233,7 @@ function processMessageChild(
 
 function processEnum(
   parent: Root | Namespace | Message,
-  obj: protobuf.Enum
+  obj: protobuf.Enum,
 ): Enum {
   const valuesObj: { [k: string]: EnumValue } = {};
 
