@@ -21,6 +21,7 @@
     "build": "tsc --build",
     "build-pkgs": "tsc --build tsconfig-pkgs.json",
     "build-tests": "tsc --build tsconfig-test.json",
+    "clean-pkgs": "rm -rf ./packages/*/{dist/,dist-cjs/,*.tsbuildinfo}",
     "lint": "LINT_QUICK=false eslint --max-warnings 0 --report-unused-disable-directives --format codeframe .",
     "test": "jest"
   },
