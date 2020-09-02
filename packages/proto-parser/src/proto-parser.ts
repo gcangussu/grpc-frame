@@ -59,9 +59,8 @@ function processNamespaceChild(
     return processMessage(parent, obj);
   } else if (obj instanceof protobuf.Namespace) {
     return processNamespace(parent, obj);
-  } else {
-    throw new Error(`Unexpected instance of '${obj.constructor.name}'`);
   }
+  throw new Error(`Unexpected instance of '${obj.constructor.name}'`);
 }
 
 function processNamespace(
@@ -201,7 +200,7 @@ function getMapType(
   if (type !== "map") return null;
 
   if (!(field instanceof protobuf.MapField))
-    throw Error("Inconsistent pair of type and field");
+    throw new Error("Inconsistent pair of type and field");
 
   return [field.keyType as MapKeyType, field.type];
 }
@@ -226,9 +225,8 @@ function processMessageChild(
     return processEnum(parent, obj);
   } else if (obj instanceof protobuf.Type) {
     return processMessage(parent, obj);
-  } else {
-    throw new Error(`Unexpected instance of '${obj.constructor.name}'`);
   }
+  throw new Error(`Unexpected instance of '${obj.constructor.name}'`);
 }
 
 function processEnum(

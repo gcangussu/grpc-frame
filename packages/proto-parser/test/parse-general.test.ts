@@ -130,7 +130,7 @@ test("general", async () => {
     type: "string",
     typeName: "",
     mapType: null,
-    parentOneof: Res.oneofs.testOneof,
+    parentOneof: Res.oneofs.testOneof!,
   });
 
   expect(Res.fields.code).toStrictEqual<MessageField>({
@@ -140,6 +140,6 @@ test("general", async () => {
     type: "enum",
     typeName: "Code",
     mapType: null,
-    parentOneof: Res.oneofs.testOneof,
+    parentOneof: Res.oneofs.testOneof!,
   });
 });

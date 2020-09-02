@@ -4,9 +4,7 @@
     "rootDir": "./",
     "outDir": "./test-build",
     "types": ["node", "jest"],
-    "declarationMap": false,
-    "strictPropertyInitialization": false,
-    "strictNullChecks": false
+    "declarationMap": false
   },
   "include": ["**/*.test.ts"],
   "exclude": ["**/node_modules/**"],

@@ -3,6 +3,7 @@ const isQuick = process.env.LINT_QUICK !== "false";
 
 const tsProject = ["./packages/*/tsconfig-cjs.json", "./tsconfig-test.json"];
 
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
   extends: [
@@ -12,13 +13,23 @@ module.exports = {
   ],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: tsProject,
+    project: isQuick ? null : tsProject,
   },
   settings: {
-    "import/resolver": {
-      typescript: {
-        project: tsProject,
+    "import/resolver": { typescript: { project: tsProject } },
+  },
+  overrides: [
+    {
+      files: ["*.test.ts"],
+      extends: "@gcangussu/eslint-config/jest",
+      rules: {
+        "@typescript-eslint/no-unsafe-assignment": "off",
+
+        "import/no-extraneous-dependencies": [
+          "error",
+          { packageDir: __dirname },
+        ],
       },
     },
-  },
+  ],
 };
