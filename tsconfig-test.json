@@ -6,8 +6,7 @@
     "types": ["node", "jest"],
     "declarationMap": false
   },
-  "include": ["**/*.test.ts"],
-  "exclude": ["**/node_modules/**"],
+  "include": ["packages/*/test/"],
   "references": [
     { "path": "packages/proto-parser/tsconfig-cjs.json" },
     { "path": "packages/grpc-frame/tsconfig-cjs.json" }

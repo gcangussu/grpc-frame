@@ -20,7 +20,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.test.ts"],
+      files: ["packages/*/test/**/*.ts"],
       extends: "@gcangussu/eslint-config/jest",
       rules: {
         "@typescript-eslint/no-unsafe-assignment": "off",

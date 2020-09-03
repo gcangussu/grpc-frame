@@ -4,7 +4,8 @@
  * Babel don't do typechecking. Use `yarn build-tests` to typecheck tests.
  */
 module.exports = {
-  test: "**/*.ts",
+  test: "packages/*/test/**/*.ts",
+  exclude: [/* don't import source files */ "packages/*/src/"],
   presets: ["@babel/preset-typescript"],
   plugins: [
     "@babel/plugin-transform-modules-commonjs",
