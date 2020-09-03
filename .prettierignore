@@ -1,6 +1,6 @@
 /.vscode/
 /coverage/
-/test-build/
+/build-tests/
 
 node_modules/
 dist/

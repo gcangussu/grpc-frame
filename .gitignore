@@ -6,7 +6,7 @@ yarn-error.log
 # Generated code
 dist/
 dist-cjs/
-/test-build/
+/build-tests/
 
 # Visual Studio Code
 .vscode/

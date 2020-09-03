@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
+exec ./node_modules/.bin/tsc --build tsconfig.json "$@"

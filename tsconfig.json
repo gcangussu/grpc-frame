@@ -3,6 +3,6 @@
   "include": [],
   "references": [
     { "path": "./tsconfig-pkgs.json" },
-    { "path": "./tsconfig-test.json" }
+    { "path": "./tsconfig-tests.json" }
   ]
 }

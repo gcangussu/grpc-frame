@@ -1,1 +1,1 @@
-export * from "./dist/ast-types";
+export * from "./dist-cjs/ast-types";

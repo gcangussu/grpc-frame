@@ -2,7 +2,7 @@
   "extends": "./packages/tsconfig-base.json",
   "compilerOptions": {
     "rootDir": "./",
-    "outDir": "./test-build",
+    "outDir": "./build-tests",
     "types": ["node", "jest"],
     "declarationMap": false
   },

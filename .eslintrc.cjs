@@ -1,7 +1,7 @@
 // eslint-disable-next-line node/no-process-env
 const isQuick = process.env.LINT_QUICK !== "false";
 
-const tsProject = ["./packages/*/tsconfig-cjs.json", "./tsconfig-test.json"];
+const tsProject = ["./packages/*/tsconfig-cjs.json", "./tsconfig-tests.json"];
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {

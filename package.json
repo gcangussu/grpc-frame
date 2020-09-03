@@ -18,12 +18,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "tsc --build",
-    "build-pkgs": "tsc --build tsconfig-pkgs.json",
-    "build-tests": "tsc --build tsconfig-test.json",
-    "clean-pkgs": "rm -rf ./packages/*/{dist/,dist-cjs/,*.tsbuildinfo}",
-    "lint": "LINT_QUICK=false eslint --max-warnings 0 --report-unused-disable-directives --format codeframe .",
-    "test": "jest"
+    "build": "./scripts/build-pkgs",
+    "build-tests": "./scripts/build-tests",
+    "clean": "./scripts/clean",
+    "lint": "./scripts/lint",
+    "test": "./scripts/test"
   },
   "husky": {
     "hooks": {
