@@ -22,6 +22,11 @@ message Res {
     string message = 1;
     Code code = 2;
   }
+
+  message Oi {
+    repeated bool status = 1;
+  }
+  Oi oi = 3;
 }
 
 enum Code {

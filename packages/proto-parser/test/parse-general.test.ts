@@ -118,9 +118,13 @@ test("general", async () => {
     kind: "message",
     name: "Res",
     parent: bar,
-    fields: { message: expect.any(Object), code: expect.any(Object) },
+    fields: {
+      message: expect.any(Object),
+      code: expect.any(Object),
+      oi: expect.any(Object),
+    },
     oneofs: { testOneof: expect.any(Object) },
-    children: {},
+    children: { Oi: expect.any(Object) },
   });
 
   expect(Res.fields.message).toStrictEqual<MessageField>({
@@ -141,5 +145,34 @@ test("general", async () => {
     typeName: "Code",
     mapType: null,
     parentOneof: Res.oneofs.testOneof!,
+  });
+
+  expect(Res.fields.oi).toStrictEqual<MessageField>({
+    name: "oi",
+    label: "optional",
+    number: 3,
+    type: "message",
+    typeName: "Oi",
+    mapType: null,
+    parentOneof: null,
+  });
+
+  expect(Res.children.Oi).toStrictEqual<Message>({
+    kind: "message",
+    name: "Oi",
+    parent: Res,
+    fields: {
+      status: {
+        name: "status",
+        label: "repeated",
+        number: 1,
+        type: "bool",
+        typeName: "",
+        mapType: null,
+        parentOneof: null,
+      },
+    },
+    oneofs: {},
+    children: {},
   });
 });
