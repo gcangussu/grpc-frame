@@ -18,11 +18,14 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "./scripts/build-pkgs",
+    "build": "./scripts/build",
+    "build-pkgs": "./scripts/build-pkgs",
     "build-tests": "./scripts/build-tests",
     "clean": "./scripts/clean",
-    "lint": "./scripts/lint",
-    "test": "./scripts/test"
+    "lint": "./scripts/build-pkgs && ./scripts/lint --format codeframe",
+    "prettier-check": "prettier --check .",
+    "prettier-write": "prettier --write .",
+    "test": "./scripts/build-pkgs && ./scripts/test"
   },
   "husky": {
     "hooks": {

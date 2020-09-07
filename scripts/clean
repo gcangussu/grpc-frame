@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-./scripts/clean-pkgs
-./scripts/clean-tests
+rm -rf ./packages/*/{dist/,dist-cjs/}
+rm -rf ./build-tests/

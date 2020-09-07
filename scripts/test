@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-./scripts/build-pkgs
-
 exec ./node_modules/.bin/jest "$@"

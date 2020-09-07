@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-./scripts/build
-
 export LINT_QUICK=false
 
 exec ./node_modules/.bin/eslint . \
   --max-warnings 0 \
   --report-unused-disable-directives \
-  --format codeframe \
   "$@"
